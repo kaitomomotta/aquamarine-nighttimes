@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dalfujxnrl7nj"]
+
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_ns8dy"]
+
+[node name="Main" type="Node"]
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Character" type="Node" parent="Characters"]
+script = ExtResource("1_ns8dy")
+
+[node name="Character2" type="Node" parent="Characters"]
+script = ExtResource("1_ns8dy")
+chr_name = "default2"
