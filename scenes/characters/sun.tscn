@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjh4tngdwdrs4"]
+
+[ext_resource type="Script" path="res://scripts/characters/sun.gd" id="1_tdeu1"]
+
+[node name="Sun" type="Node"]
+script = ExtResource("1_tdeu1")
+chr_name = "Sun"
+chr_health = 100

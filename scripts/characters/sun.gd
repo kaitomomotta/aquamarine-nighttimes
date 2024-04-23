@@ -1,11 +1,9 @@
-extends Node
+class_name Sun extends Character
 
-# character variables
-var sun : Sun = Main.get_sun()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sun.say_hi()
+	# overrides the character.gd _ready function
 	pass # Replace with function body.
 
 

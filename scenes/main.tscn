@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dalfujxnrl7nj"]
+[gd_scene load_steps=4 format=3 uid="uid://dalfujxnrl7nj"]
 
-[ext_resource type="Script" path="res://scripts/character.gd" id="1_ns8dy"]
+[ext_resource type="PackedScene" uid="uid://cjh4tngdwdrs4" path="res://scenes/characters/sun.tscn" id="1_2unt6"]
+[ext_resource type="Script" path="res://scripts/characters/character.gd" id="1_ns8dy"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_siahx"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_siahx")
 
 [node name="Characters" type="Node" parent="."]
 
+[node name="Sun" parent="Characters" instance=ExtResource("1_2unt6")]
+
 [node name="Character" type="Node" parent="Characters"]
 script = ExtResource("1_ns8dy")
-
-[node name="Character2" type="Node" parent="Characters"]
-script = ExtResource("1_ns8dy")
-chr_name = "default2"
