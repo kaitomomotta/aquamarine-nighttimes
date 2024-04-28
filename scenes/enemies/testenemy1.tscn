@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuo5anf7g34eo"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_xf5g5"]
+
+[node name="Testenemy1" type="Node"]
+script = ExtResource("1_xf5g5")
+ene_name = "test1"
+ene_max_hp = 200

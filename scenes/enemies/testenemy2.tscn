@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://gbei38cs6enn"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_fpvtb"]
+
+[node name="Testenemy2" type="Node"]
+script = ExtResource("1_fpvtb")
+ene_name = "test2"
