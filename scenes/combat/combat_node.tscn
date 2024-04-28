@@ -10,5 +10,6 @@ script = ExtResource("1_kirw0")
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Testenemy1" parent="Enemies" instance=ExtResource("2_uk6vf")]
+ene_ag = 40
 
 [node name="Testenemy2" parent="Enemies" instance=ExtResource("3_wocu3")]

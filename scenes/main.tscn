@@ -11,6 +11,7 @@ script = ExtResource("1_siahx")
 [node name="Sun" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Sun"
+chr_ag = 200
 
 [node name="Meteor" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
