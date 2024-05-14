@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dalfujxnrl7nj"]
+[gd_scene load_steps=7 format=3 uid="uid://dalfujxnrl7nj"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_siahx"]
 [ext_resource type="Script" path="res://scripts/character.gd" id="2_cf0y7"]
+[ext_resource type="Texture2D" uid="uid://b6m3pbwgyo166" path="res://assets/images/characters/Kaito (1).png" id="3_a23lh"]
+[ext_resource type="Texture2D" uid="uid://408gbhp8gxix" path="res://assets/images/characters/Kirigiri (1).png" id="4_fltvs"]
+[ext_resource type="Texture2D" uid="uid://bildc0hp3qgp0" path="res://assets/images/characters/Shuichi (1).png" id="5_i3ua2"]
+[ext_resource type="Texture2D" uid="uid://t5s66yp4elve" path="res://assets/images/characters/Souda (1).png" id="6_32ly5"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_siahx")
@@ -11,16 +15,20 @@ script = ExtResource("1_siahx")
 [node name="Sun" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Sun"
+sprite = ExtResource("3_a23lh")
 chr_ag = 200
 
 [node name="Meteor" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Meteor"
+sprite = ExtResource("4_fltvs")
 
 [node name="Moon" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Moon"
+sprite = ExtResource("5_i3ua2")
 
 [node name="Satellite" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Satellite"
+sprite = ExtResource("6_32ly5")

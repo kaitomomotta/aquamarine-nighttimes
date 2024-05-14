@@ -3,6 +3,7 @@ class_name Character extends Node
 # generic character with shared non-overriden properties
 # properties
 @export var chr_name : String = "default"
+@export var sprite : Texture
 
 # evolution stats
 @export var chr_level : int = 1

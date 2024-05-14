@@ -1,5 +1,13 @@
 extends Node
 
+enum COMBAT_STATUS {
+	STARTING = 0,
+	CONTINUING,
+	FINISHED
+}
+
+@export var combat_status : COMBAT_STATUS = COMBAT_STATUS.STARTING
+
 # character variables
 var ally1 : Character = Main.get_sun()
 var ally2 : Character = Main.get_meteor()
@@ -7,10 +15,13 @@ var ally3 : Character = Main.get_moon()
 var ally4 : Character = Main.get_satellite()
 
 ## list of all present allies
-var allies = []
+@export var allies = []
 
 ## list of all present enemies
-var enemies = []
+@export var enemies = []
+
+## the index of the active entity in entities list
+var entity_index = 0
 
 ## list of both present allies and present enemies
 var entities = []
@@ -46,7 +57,8 @@ func _ready():
 	
 	# build enemies list
 	for i in $Enemies.get_children():
-		enemies.append(i as Enemy)
+		if i is Enemy:
+			enemies.append(i as Enemy)
 	
 	entities += allies
 	entities += enemies
@@ -54,6 +66,9 @@ func _ready():
 	# sort allies and enemies according to their agility
 	entities.sort_custom(custom_agility_sort)
 	print_entities()
+
+	# start the combat
+	combat_status = COMBAT_STATUS.CONTINUING
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0dmcwfpyh0lw"]
+
+[ext_resource type="Script" path="res://scripts/combat_interface.gd" id="1_k500p"]
+[ext_resource type="Texture2D" uid="uid://b6m3pbwgyo166" path="res://assets/images/characters/Kaito (1).png" id="2_eibnf"]
+[ext_resource type="Texture2D" uid="uid://cexgvde515emq" path="res://assets/images/polaroid.png" id="3_63we1"]
+
+[node name="Combat_Interface" type="Node2D"]
+script = ExtResource("1_k500p")
+texture = ExtResource("2_eibnf")
+
+[node name="Portrait1" type="Node2D" parent="."]
+position = Vector2(216, 796)
+
+[node name="Sprite2D" type="Sprite2D" parent="Portrait1"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Polaroid" type="Sprite2D" parent="Portrait1"]
+scale = Vector2(0.52, 0.469)
+texture = ExtResource("3_63we1")
+
+[node name="Portrait2" type="Node2D" parent="."]
+position = Vector2(1700, 268)
+
+[node name="Sprite2D" type="Sprite2D" parent="Portrait2"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Polaroid" type="Sprite2D" parent="Portrait2"]
+scale = Vector2(0.52, 0.469)
+texture = ExtResource("3_63we1")
+
+[node name="Portrait3" type="Node2D" parent="."]
+position = Vector2(216, 268)
+
+[node name="Sprite2D" type="Sprite2D" parent="Portrait3"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Polaroid" type="Sprite2D" parent="Portrait3"]
+scale = Vector2(0.52, 0.469)
+texture = ExtResource("3_63we1")
+
+[node name="Portrait4" type="Node2D" parent="."]
+position = Vector2(1700, 796)
+
+[node name="Sprite2D" type="Sprite2D" parent="Portrait4"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Polaroid" type="Sprite2D" parent="Portrait4"]
+scale = Vector2(0.52, 0.469)
+texture = ExtResource("3_63we1")
