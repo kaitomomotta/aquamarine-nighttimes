@@ -3,6 +3,8 @@ class_name Enemy extends Node
 # generic character with shared non-overriden properties
 # properties
 @export var ene_name : String = "default"
+@export var sprite : Texture
+@export var emotion : Enums.Emotions = Enums.Emotions.NEUTRAL
 
 # evolution stats
 @export var ene_level : int = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0dmcwfpyh0lw"]
+[gd_scene load_steps=5 format=3 uid="uid://b0dmcwfpyh0lw"]
 
 [ext_resource type="Script" path="res://scripts/combat_interface.gd" id="1_k500p"]
 [ext_resource type="Texture2D" uid="uid://b6m3pbwgyo166" path="res://assets/images/characters/Kaito (1).png" id="2_eibnf"]
 [ext_resource type="Texture2D" uid="uid://cexgvde515emq" path="res://assets/images/polaroid.png" id="3_63we1"]
+[ext_resource type="Texture2D" uid="uid://1xsbrrswhrhn" path="res://icon.svg" id="3_hjl4n"]
 
 [node name="Combat_Interface" type="Node2D"]
 script = ExtResource("1_k500p")
@@ -13,37 +14,149 @@ position = Vector2(216, 796)
 
 [node name="Sprite2D" type="Sprite2D" parent="Portrait1"]
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hjl4n")
 
 [node name="Polaroid" type="Sprite2D" parent="Portrait1"]
 scale = Vector2(0.52, 0.469)
 texture = ExtResource("3_63we1")
+
+[node name="HPLabel" type="Label" parent="Portrait1"]
+offset_left = -145.0
+offset_top = 159.0
+offset_right = 147.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display HP here"
+horizontal_alignment = 1
+
+[node name="SPLabel" type="Label" parent="Portrait1"]
+offset_left = -145.0
+offset_top = 191.0
+offset_right = 147.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display SP here"
+horizontal_alignment = 1
+
+[node name="EmotionLabel" type="Label" parent="Portrait1"]
+offset_left = -140.0
+offset_top = 124.0
+offset_right = 143.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "code will display Emotion here"
+horizontal_alignment = 1
 
 [node name="Portrait2" type="Node2D" parent="."]
 position = Vector2(1700, 268)
 
 [node name="Sprite2D" type="Sprite2D" parent="Portrait2"]
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hjl4n")
 
 [node name="Polaroid" type="Sprite2D" parent="Portrait2"]
 scale = Vector2(0.52, 0.469)
 texture = ExtResource("3_63we1")
+
+[node name="HPLabel" type="Label" parent="Portrait2"]
+offset_left = -146.0
+offset_top = 159.0
+offset_right = 146.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display HP here"
+horizontal_alignment = 1
+
+[node name="SPLabel" type="Label" parent="Portrait2"]
+offset_left = -146.0
+offset_top = 191.0
+offset_right = 146.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display SP here"
+horizontal_alignment = 1
+
+[node name="EmotionLabel" type="Label" parent="Portrait2"]
+offset_left = -140.0
+offset_top = 124.0
+offset_right = 141.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "code will display Emotion here"
+horizontal_alignment = 1
 
 [node name="Portrait3" type="Node2D" parent="."]
 position = Vector2(216, 268)
 
 [node name="Sprite2D" type="Sprite2D" parent="Portrait3"]
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hjl4n")
 
 [node name="Polaroid" type="Sprite2D" parent="Portrait3"]
 scale = Vector2(0.52, 0.469)
 texture = ExtResource("3_63we1")
+
+[node name="HPLabel" type="Label" parent="Portrait3"]
+offset_left = -145.0
+offset_top = 159.0
+offset_right = 147.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display HP here"
+horizontal_alignment = 1
+
+[node name="SPLabel" type="Label" parent="Portrait3"]
+offset_left = -145.0
+offset_top = 191.0
+offset_right = 147.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display SP here"
+horizontal_alignment = 1
+
+[node name="EmotionLabel" type="Label" parent="Portrait3"]
+offset_left = -140.0
+offset_top = 124.0
+offset_right = 142.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "code will display Emotion here"
+horizontal_alignment = 1
 
 [node name="Portrait4" type="Node2D" parent="."]
 position = Vector2(1700, 796)
 
 [node name="Sprite2D" type="Sprite2D" parent="Portrait4"]
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hjl4n")
 
 [node name="Polaroid" type="Sprite2D" parent="Portrait4"]
 scale = Vector2(0.52, 0.469)
 texture = ExtResource("3_63we1")
+
+[node name="HPLabel" type="Label" parent="Portrait4"]
+offset_left = -145.0
+offset_top = 159.0
+offset_right = 147.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display HP here"
+horizontal_alignment = 1
+
+[node name="SPLabel" type="Label" parent="Portrait4"]
+offset_left = -145.0
+offset_top = 191.0
+offset_right = 147.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "code will display SP here"
+horizontal_alignment = 1
+
+[node name="EmotionLabel" type="Label" parent="Portrait4"]
+offset_left = -140.0
+offset_top = 124.0
+offset_right = 142.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "code will display Emotion here"
+horizontal_alignment = 1

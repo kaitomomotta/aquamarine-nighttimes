@@ -16,19 +16,31 @@ script = ExtResource("1_siahx")
 script = ExtResource("2_cf0y7")
 chr_name = "Sun"
 sprite = ExtResource("3_a23lh")
+emotion = 1
+chr_hp = 90
+chr_sp = 100
 chr_ag = 200
 
 [node name="Meteor" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Meteor"
 sprite = ExtResource("4_fltvs")
+chr_max_hp = 125
+chr_hp = 111
+chr_sp = 90
 
 [node name="Moon" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Moon"
 sprite = ExtResource("5_i3ua2")
+chr_hp = 90
+chr_max_sp = 110
+chr_sp = 2
 
 [node name="Satellite" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Satellite"
 sprite = ExtResource("6_32ly5")
+chr_hp = 75
+chr_max_sp = 12
+chr_sp = 7

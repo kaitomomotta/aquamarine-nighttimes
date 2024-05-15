@@ -1,12 +1,5 @@
 extends Node
 
-enum Characters {
-	SUN,
-	METEOR,
-	MOON,
-	SATELLITE
-}
-
 func get_sun() -> Character:
 	return $Characters/Sun
 
@@ -20,13 +13,13 @@ func get_satellite() -> Character:
 	return $Characters/Satellite
 
 func get_character(c) -> Character:
-	if c == Characters.SUN:
+	if c == Enums.Characters.SUN:
 		return get_sun()
-	if c == Characters.METEOR:
+	if c == Enums.Characters.METEOR:
 		return get_meteor()
-	if c == Characters.MOON:
+	if c == Enums.Characters.MOON:
 		return get_moon()
-	if c == Characters.SATELLITE:
+	if c == Enums.Characters.SATELLITE:
 		return get_satellite()
 	return null
 

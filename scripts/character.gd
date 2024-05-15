@@ -4,6 +4,7 @@ class_name Character extends Node
 # properties
 @export var chr_name : String = "default"
 @export var sprite : Texture
+@export var emotion : Enums.Emotions = Enums.Emotions.NEUTRAL
 
 # evolution stats
 @export var chr_level : int = 1
@@ -12,6 +13,9 @@ class_name Character extends Node
 # survivability stats
 @export var chr_max_hp : int = 100
 @export var chr_hp : int
+
+@export var chr_max_sp : int = 100
+@export var chr_sp : int
 
 # regular combat stats
 
@@ -48,5 +52,4 @@ func take_damage(amount : int):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	chr_hp = chr_max_hp
 	pass # Replace with function body.
