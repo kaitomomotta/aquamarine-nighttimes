@@ -7,17 +7,20 @@ func update_enemies():
 	if len(enemies) > 0:
 		var enemy1 = enemies[0] as Enemy
 		$Enemies/Enemy1/Sprite2D.texture = enemy1.sprite
+		$Enemies/Enemy1/HPLabel.text = str(enemy1.ene_hp) + "/" + str(enemy1.ene_max_hp)
 		$Enemies/Enemy1.position = Vector2(960,540)
 	if len(enemies) > 1:
 		# there is a second enemy
 		var enemy2 = enemies[1] as Enemy
 		$Enemies/Enemy2/Sprite2D.texture = enemy2.sprite
+		$Enemies/Enemy2/HPLabel.text = str(enemy2.ene_hp) + "/" + str(enemy2.ene_max_hp)
 		$Enemies/Enemy1.position = Vector2(700,540)
 		$Enemies/Enemy2.position = Vector2(1220, 540)
 	if len(enemies) > 2:
 		# there is a 3rd enemy
 		var enemy3 = enemies[2] as Enemy
 		$Enemies/Enemy3/Sprite2D.texture = enemy3.sprite
+		$Enemies/Enemy3/HPLabel.text = str(enemy3.ene_hp) + "/" + str(enemy3.ene_max_hp)
 		$Enemies/Enemy1.position = Vector2(650,600)
 		$Enemies/Enemy2.position = Vector2(960,300)
 		$Enemies/Enemy3.position = Vector2(1270, 600)
@@ -35,27 +38,26 @@ func update_pointer_position(active_entity):
 			Enums.Characters.SATELLITE:
 				$Pointer.position = Vector2(1625, 900)
 
-func update_character_portrait(c : Enums.Characters):
-	if c == Enums.Characters.SUN:
-		$Portrait1/Sprite2D.texture = Main.get_sun().sprite
-		$Portrait1/HPLabel.text = str(Main.get_sun().chr_hp) + " / " + str(Main.get_sun().chr_max_hp)
-		$Portrait1/SPLabel.text = str(Main.get_sun().chr_sp) + " / " + str(Main.get_sun().chr_max_sp)
-		$Portrait1/EmotionLabel.text = Enums.emotion_to_str(Main.get_sun().emotion)
-	if c == Enums.Characters.METEOR:
-		$Portrait2/Sprite2D.texture = Main.get_meteor().sprite
-		$Portrait2/HPLabel.text = str(Main.get_meteor().chr_hp) + " / " + str(Main.get_meteor().chr_max_hp)
-		$Portrait2/SPLabel.text = str(Main.get_meteor().chr_sp) + " / " + str(Main.get_meteor().chr_max_sp)
-		$Portrait2/EmotionLabel.text = Enums.emotion_to_str(Main.get_meteor().emotion)		
-	if c == Enums.Characters.MOON:
-		$Portrait3/Sprite2D.texture = Main.get_moon().sprite
-		$Portrait3/HPLabel.text = str(Main.get_moon().chr_hp) + " / " + str(Main.get_moon().chr_max_hp)
-		$Portrait3/SPLabel.text = str(Main.get_moon().chr_sp) + " / " + str(Main.get_moon().chr_max_sp)
-		$Portrait3/EmotionLabel.text = Enums.emotion_to_str(Main.get_moon().emotion)
-	if c == Enums.Characters.SATELLITE:
-		$Portrait4/Sprite2D.texture = Main.get_satellite().sprite
-		$Portrait4/HPLabel.text = str(Main.get_satellite().chr_hp) + " / " + str(Main.get_satellite().chr_max_hp)
-		$Portrait4/SPLabel.text = str(Main.get_satellite().chr_sp) + " / " + str(Main.get_satellite().chr_max_sp)
-		$Portrait4/EmotionLabel.text = Enums.emotion_to_str(Main.get_satellite().emotion)
+func update_character_portrait():
+	$Portrait1/Sprite2D.texture = Main.get_sun().sprite
+	$Portrait1/HPLabel.text = str(Main.get_sun().chr_hp) + " / " + str(Main.get_sun().chr_max_hp)
+	$Portrait1/SPLabel.text = str(Main.get_sun().chr_sp) + " / " + str(Main.get_sun().chr_max_sp)
+	$Portrait1/EmotionLabel.text = Enums.emotion_to_str(Main.get_sun().emotion)
+	
+	$Portrait2/Sprite2D.texture = Main.get_meteor().sprite
+	$Portrait2/HPLabel.text = str(Main.get_meteor().chr_hp) + " / " + str(Main.get_meteor().chr_max_hp)
+	$Portrait2/SPLabel.text = str(Main.get_meteor().chr_sp) + " / " + str(Main.get_meteor().chr_max_sp)
+	$Portrait2/EmotionLabel.text = Enums.emotion_to_str(Main.get_meteor().emotion)	
+		
+	$Portrait3/Sprite2D.texture = Main.get_moon().sprite
+	$Portrait3/HPLabel.text = str(Main.get_moon().chr_hp) + " / " + str(Main.get_moon().chr_max_hp)
+	$Portrait3/SPLabel.text = str(Main.get_moon().chr_sp) + " / " + str(Main.get_moon().chr_max_sp)
+	$Portrait3/EmotionLabel.text = Enums.emotion_to_str(Main.get_moon().emotion)
+	
+	$Portrait4/Sprite2D.texture = Main.get_satellite().sprite
+	$Portrait4/HPLabel.text = str(Main.get_satellite().chr_hp) + " / " + str(Main.get_satellite().chr_max_hp)
+	$Portrait4/SPLabel.text = str(Main.get_satellite().chr_sp) + " / " + str(Main.get_satellite().chr_max_sp)
+	$Portrait4/EmotionLabel.text = Enums.emotion_to_str(Main.get_satellite().emotion)
 	return
 
 
@@ -67,8 +69,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	update_character_portrait(Enums.Characters.SUN)
-	update_character_portrait(Enums.Characters.METEOR)
-	update_character_portrait(Enums.Characters.MOON)
-	update_character_portrait(Enums.Characters.SATELLITE)
+	update_character_portrait()
+	update_enemies()
 	pass

@@ -22,5 +22,6 @@ sprite = ExtResource("5_cpmg8")
 
 [node name="Testenemy3" parent="Enemies" instance=ExtResource("3_wocu3")]
 sprite = ExtResource("6_ispsp")
+ene_max_hp = 110
 
 [node name="Combat_Interface" parent="." instance=ExtResource("4_0df21")]

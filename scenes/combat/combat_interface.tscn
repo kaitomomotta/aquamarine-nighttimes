@@ -173,15 +173,39 @@ position = Vector2(-445, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy1"]
 
+[node name="HPLabel" type="Label" parent="Enemies/Enemy1"]
+offset_left = -120.0
+offset_top = 4.0
+offset_right = 121.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
 [node name="Enemy2" type="Node2D" parent="Enemies"]
 position = Vector2(-445, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy2"]
 
+[node name="HPLabel" type="Label" parent="Enemies/Enemy2"]
+offset_left = -120.0
+offset_top = 4.0
+offset_right = 121.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+
 [node name="Enemy3" type="Node2D" parent="Enemies"]
 position = Vector2(-445, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy3"]
+
+[node name="HPLabel" type="Label" parent="Enemies/Enemy3"]
+offset_left = -120.0
+offset_top = 4.0
+offset_right = 121.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
 
 [node name="CombatButtons" type="Node2D" parent="."]
 position = Vector2(940, 920)

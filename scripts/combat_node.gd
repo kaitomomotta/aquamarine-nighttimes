@@ -65,8 +65,6 @@ func _ready():
 	for i in $Enemies.get_children():
 		if i is Enemy:
 			enemies.append(i as Enemy)
-	#display the enemies
-	$Combat_Interface.update_enemies()
 	
 	entities += allies
 	entities += enemies
