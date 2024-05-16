@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0dmcwfpyh0lw"]
+[gd_scene load_steps=9 format=3 uid="uid://b0dmcwfpyh0lw"]
 
 [ext_resource type="Script" path="res://scripts/combat_interface.gd" id="1_k500p"]
-[ext_resource type="Texture2D" uid="uid://b6m3pbwgyo166" path="res://assets/images/characters/Kaito (1).png" id="2_eibnf"]
 [ext_resource type="Texture2D" uid="uid://cexgvde515emq" path="res://assets/images/polaroid.png" id="3_63we1"]
 [ext_resource type="Texture2D" uid="uid://1xsbrrswhrhn" path="res://icon.svg" id="3_hjl4n"]
+[ext_resource type="Script" path="res://scripts/combat_buttons.gd" id="4_qbsme"]
+[ext_resource type="Texture2D" uid="uid://curs1nkxa1v8p" path="res://assets/images/UI/CombatAttackButton.png" id="5_r3ua7"]
+[ext_resource type="Texture2D" uid="uid://bc18prvxlw8bb" path="res://assets/images/UI/CombatSkillsButton.png" id="6_8s3go"]
+[ext_resource type="Texture2D" uid="uid://cxnfvskl7ytu5" path="res://assets/images/UI/CombatItemsButton.png" id="7_r60lm"]
+[ext_resource type="Texture2D" uid="uid://bnx3j2alwl4jw" path="res://assets/images/UI/CombatPassButton.png" id="8_0e7al"]
 
 [node name="Combat_Interface" type="Node2D"]
 script = ExtResource("1_k500p")
-texture = ExtResource("2_eibnf")
 
 [node name="Portrait1" type="Node2D" parent="."]
 position = Vector2(216, 796)
@@ -160,3 +163,39 @@ offset_bottom = 147.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "code will display Emotion here"
 horizontal_alignment = 1
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy1" type="Node2D" parent="Enemies"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy1"]
+
+[node name="Enemy2" type="Node2D" parent="Enemies"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy2"]
+
+[node name="Enemy3" type="Node2D" parent="Enemies"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy3"]
+
+[node name="CombatButtons" type="Node2D" parent="."]
+position = Vector2(940, 920)
+script = ExtResource("4_qbsme")
+
+[node name="BasicScreen" type="Node2D" parent="CombatButtons"]
+
+[node name="Attack" type="Sprite2D" parent="CombatButtons/BasicScreen"]
+position = Vector2(-243, -52.5)
+texture = ExtResource("5_r3ua7")
+
+[node name="Skills" type="Sprite2D" parent="CombatButtons/BasicScreen"]
+position = Vector2(244, -52.5)
+texture = ExtResource("6_8s3go")
+
+[node name="Items" type="Sprite2D" parent="CombatButtons/BasicScreen"]
+position = Vector2(-243, 25.5)
+texture = ExtResource("7_r60lm")
+
+[node name="Pass" type="Sprite2D" parent="CombatButtons/BasicScreen"]
+position = Vector2(244, 25.5)
+texture = ExtResource("8_0e7al")

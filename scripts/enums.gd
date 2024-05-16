@@ -32,3 +32,22 @@ func emotion_to_str(e : Emotions):
 		return "ANGRY"
 	if e == Emotions.ENRAGED:
 		return "ENRAGED"
+
+enum TARGET {
+	NONE = 0,
+	ALLY1,
+	ALLY2,
+	ALLY3,
+	ALLY4,
+	ENEMY1,
+	ENEMY2,
+	ENEMY3
+}
+
+enum COMBAT_INPUT_TYPE {
+	BASE,
+	DIALOGUE,
+	SELECTING_SKILL,
+	SELECTING_ALLY,
+	SELECTING_ENEMY
+}

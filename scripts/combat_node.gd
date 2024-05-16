@@ -3,7 +3,8 @@ extends Node
 enum COMBAT_STATUS {
 	STARTING = 0,
 	CONTINUING,
-	FINISHED
+	WON,
+	LOSS
 }
 
 @export var combat_status : COMBAT_STATUS = COMBAT_STATUS.STARTING
@@ -19,6 +20,11 @@ var ally4 : Character = Main.get_satellite()
 
 ## list of all present enemies
 @export var enemies = []
+
+var active_entity
+
+func get_enemies():
+	return enemies
 
 ## the index of the active entity in entities list
 var entity_index = 0
@@ -40,7 +46,7 @@ func print_entities() -> void:
 func custom_agility_sort(a, b):
 	var ares : int
 	var bres : int
-	if a is Character: 
+	if a is Character:
 		ares = (a as Character).chr_ag
 	else:
 		ares = (a as Enemy).ene_ag
@@ -59,6 +65,8 @@ func _ready():
 	for i in $Enemies.get_children():
 		if i is Enemy:
 			enemies.append(i as Enemy)
+	#display the enemies
+	$Combat_Interface.update_enemies()
 	
 	entities += allies
 	entities += enemies
@@ -69,8 +77,69 @@ func _ready():
 
 	# start the combat
 	combat_status = COMBAT_STATUS.CONTINUING
+	active_entity = entities[0]
 
+func next_turn() -> int:
+	if active_entity is Character: 
+		print ("ended character " + (active_entity as Character).chr_name + "'s turn")
+	if active_entity is Enemy:
+		print("ended enemy " + (active_entity as Enemy).ene_name + "'s turn")
+	for i in range(len(entities)):
+		if entities[i] == active_entity:
+			if i == len(entities) - 1:
+				active_entity = entities[0]
+				return 0
+			active_entity = entities[i+1]
+			return i+1
+	return -1
+	
+func check_all_enemies_dead() -> bool:
+	for i in $Enemies.get_children():
+		if (i as Enemy).ene_hp > 0:
+			return false
+	return true
+
+func check_all_allies_dead() -> bool:
+	for i in allies:
+		if (i as Character).chr_hp > 0:
+			return false
+	return true
+
+var input_type : Enums.COMBAT_INPUT_TYPE = Enums.COMBAT_INPUT_TYPE.BASE
+var target : Enums.TARGET = Enums.TARGET.NONE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if combat_status == COMBAT_STATUS.CONTINUING:
+		# check if no need to continue combat
+		if check_all_allies_dead():
+			combat_status = COMBAT_STATUS.LOSS
+		if check_all_enemies_dead():
+			combat_status = COMBAT_STATUS.WON
+		
+		#check input types, go back to base afterwards
+		match input_type:
+			Enums.COMBAT_INPUT_TYPE.BASE:
+				return
+			Enums.COMBAT_INPUT_TYPE.DIALOGUE:
+				# TODO
+				return
+			Enums.COMBAT_INPUT_TYPE.SELECTING_SKILL:
+				# TODO
+				return
+			Enums.COMBAT_INPUT_TYPE.SELECTING_ENEMY:
+				# check for none or wrong input
+				if target == Enums.TARGET.NONE or target == Enums.TARGET.ALLY1 or target == Enums.TARGET.ALLY2 or target == Enums.TARGET.ALLY3 or target == Enums.TARGET.ALLY4:
+					target = Enums.TARGET.NONE
+					return
+				# TODO there is someone selected, perform the action
+				return
+			Enums.COMBAT_INPUT_TYPE.SELECTING_ALLY:
+				# check for none or wrong input
+				if target == Enums.TARGET.NONE or target == Enums.TARGET.ENEMY1 or target == Enums.TARGET.ENEMY2 or target == Enums.TARGET.ENEMY3:
+					target = Enums.TARGET.NONE
+					return
+				# TODO there is someone selected, perform the action
+				return
+		return
+	print("combat is finished")

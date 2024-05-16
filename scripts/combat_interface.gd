@@ -1,6 +1,27 @@
 extends Node2D
 
-@export var texture : Texture
+var enemies = []
+
+func update_enemies():
+	enemies = get_parent().get_enemies()
+	if len(enemies) > 0:
+		var enemy1 = enemies[0] as Enemy
+		$Enemies/Enemy1/Sprite2D.texture = enemy1.sprite
+		$Enemies/Enemy1.position = Vector2(960,540)
+	if len(enemies) > 1:
+		# there is a second enemy
+		var enemy2 = enemies[1] as Enemy
+		$Enemies/Enemy2/Sprite2D.texture = enemy2.sprite
+		$Enemies/Enemy1.position = Vector2(700,540)
+		$Enemies/Enemy2.position = Vector2(1220, 540)
+	if len(enemies) > 2:
+		# there is a 3rd enemy
+		var enemy3 = enemies[2] as Enemy
+		$Enemies/Enemy3/Sprite2D.texture = enemy3.sprite
+		$Enemies/Enemy1.position = Vector2(650,600)
+		$Enemies/Enemy2.position = Vector2(960,300)
+		$Enemies/Enemy3.position = Vector2(1270, 600)
+		
 
 func update_character_portrait(c : Enums.Characters):
 	if c == Enums.Characters.SUN:
@@ -24,6 +45,8 @@ func update_character_portrait(c : Enums.Characters):
 		$Portrait4/SPLabel.text = str(Main.get_satellite().chr_sp) + " / " + str(Main.get_satellite().chr_max_sp)
 		$Portrait4/EmotionLabel.text = Enums.emotion_to_str(Main.get_satellite().emotion)
 	return
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
