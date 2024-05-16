@@ -78,6 +78,7 @@ func _ready():
 	# start the combat
 	combat_status = COMBAT_STATUS.CONTINUING
 	active_entity = entities[0]
+	$Combat_Interface.update_pointer_position(active_entity)
 
 func next_turn() -> int:
 	if active_entity is Character: 
@@ -88,8 +89,10 @@ func next_turn() -> int:
 		if entities[i] == active_entity:
 			if i == len(entities) - 1:
 				active_entity = entities[0]
+				$Combat_Interface.update_pointer_position(active_entity)
 				return 0
 			active_entity = entities[i+1]
+			$Combat_Interface.update_pointer_position(active_entity)
 			return i+1
 	return -1
 	
@@ -116,6 +119,10 @@ func _process(delta):
 			combat_status = COMBAT_STATUS.LOSS
 		if check_all_enemies_dead():
 			combat_status = COMBAT_STATUS.WON
+			
+		if active_entity is Enemy:
+			# TODO implement enemy logic
+			next_turn()
 		
 		#check input types, go back to base afterwards
 		match input_type:
@@ -140,6 +147,10 @@ func _process(delta):
 					target = Enums.TARGET.NONE
 					return
 				# TODO there is someone selected, perform the action
+				return
+			Enums.COMBAT_INPUT_TYPE.FINISHED:
+				next_turn()
+				input_type = Enums.COMBAT_INPUT_TYPE.BASE
 				return
 		return
 	print("combat is finished")

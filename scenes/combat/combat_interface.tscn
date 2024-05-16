@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0dmcwfpyh0lw"]
+[gd_scene load_steps=11 format=3 uid="uid://b0dmcwfpyh0lw"]
 
 [ext_resource type="Script" path="res://scripts/combat_interface.gd" id="1_k500p"]
 [ext_resource type="Texture2D" uid="uid://cexgvde515emq" path="res://assets/images/polaroid.png" id="3_63we1"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bc18prvxlw8bb" path="res://assets/images/UI/CombatSkillsButton.png" id="6_8s3go"]
 [ext_resource type="Texture2D" uid="uid://cxnfvskl7ytu5" path="res://assets/images/UI/CombatItemsButton.png" id="7_r60lm"]
 [ext_resource type="Texture2D" uid="uid://bnx3j2alwl4jw" path="res://assets/images/UI/CombatPassButton.png" id="8_0e7al"]
+[ext_resource type="Texture2D" uid="uid://blk4kj1l55i5f" path="res://assets/images/UI/CombatBasicPointer.png" id="9_ohyif"]
+[ext_resource type="Texture2D" uid="uid://bia5q3mjjfaf6" path="res://assets/images/UI/Pointer.png" id="10_ttd6d"]
 
 [node name="Combat_Interface" type="Node2D"]
 script = ExtResource("1_k500p")
@@ -167,14 +169,17 @@ horizontal_alignment = 1
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy1" type="Node2D" parent="Enemies"]
+position = Vector2(-445, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy1"]
 
 [node name="Enemy2" type="Node2D" parent="Enemies"]
+position = Vector2(-445, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy2"]
 
 [node name="Enemy3" type="Node2D" parent="Enemies"]
+position = Vector2(-445, 133)
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy3"]
 
@@ -199,3 +204,10 @@ texture = ExtResource("7_r60lm")
 [node name="Pass" type="Sprite2D" parent="CombatButtons/BasicScreen"]
 position = Vector2(244, 25.5)
 texture = ExtResource("8_0e7al")
+
+[node name="Pointer" type="Sprite2D" parent="CombatButtons/BasicScreen"]
+position = Vector2(-243, -52.5)
+texture = ExtResource("9_ohyif")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+texture = ExtResource("10_ttd6d")

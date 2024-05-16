@@ -23,6 +23,18 @@ func update_enemies():
 		$Enemies/Enemy3.position = Vector2(1270, 600)
 		
 
+func update_pointer_position(active_entity):
+	if active_entity is Character:
+		match (active_entity as Character).chr_enum:
+			Enums.Characters.SUN:
+				$Pointer.position = Vector2(100, 900)
+			Enums.Characters.METEOR:
+				$Pointer.position = Vector2(1625, 350)
+			Enums.Characters.MOON:
+				$Pointer.position = Vector2(100, 350)
+			Enums.Characters.SATELLITE:
+				$Pointer.position = Vector2(1625, 900)
+
 func update_character_portrait(c : Enums.Characters):
 	if c == Enums.Characters.SUN:
 		$Portrait1/Sprite2D.texture = Main.get_sun().sprite
@@ -50,13 +62,13 @@ func update_character_portrait(c : Enums.Characters):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_character_portrait(Enums.Characters.SUN)
-	update_character_portrait(Enums.Characters.METEOR)
-	update_character_portrait(Enums.Characters.MOON)
-	update_character_portrait(Enums.Characters.SATELLITE)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	update_character_portrait(Enums.Characters.SUN)
+	update_character_portrait(Enums.Characters.METEOR)
+	update_character_portrait(Enums.Characters.MOON)
+	update_character_portrait(Enums.Characters.SATELLITE)
 	pass
