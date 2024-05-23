@@ -41,8 +41,19 @@ enum TARGET {
 	ALLY4,
 	ENEMY1,
 	ENEMY2,
-	ENEMY3
+	ENEMY3,
+	ALL_ALLIES,
+	ALL_ENEMIES
 }
+
+func target_enemy_to_enum(i):
+	if i == 0: 
+		return TARGET.ENEMY1
+	if i == 1:
+		return TARGET.ENEMY2
+	if i == 2:
+		return TARGET.ENEMY3
+	return TARGET.NONE
 
 enum COMBAT_INPUT_TYPE {
 	BASE,
@@ -51,4 +62,9 @@ enum COMBAT_INPUT_TYPE {
 	SELECTING_ALLY,
 	SELECTING_ENEMY,
 	FINISHED
+}
+
+enum SKILLS {
+	NONE = 0,
+	BASIC_ATTACK,
 }

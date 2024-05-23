@@ -4,7 +4,7 @@ class_name Character extends Node
 # properties
 @export var chr_name : String = "default"
 @export var chr_enum : Enums.Characters
-@export var sprite : Texture
+@export var sprite : SpriteFrames
 @export var emotion : Enums.Emotions = Enums.Emotions.NEUTRAL
 
 # evolution stats

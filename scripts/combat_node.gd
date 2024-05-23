@@ -108,6 +108,7 @@ func check_all_allies_dead() -> bool:
 
 var input_type : Enums.COMBAT_INPUT_TYPE = Enums.COMBAT_INPUT_TYPE.BASE
 var target : Enums.TARGET = Enums.TARGET.NONE
+var skill : Enums.SKILLS = Enums.SKILLS.NONE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

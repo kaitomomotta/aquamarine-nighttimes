@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjflgoo88i37"]
+[gd_scene load_steps=9 format=3 uid="uid://bjflgoo88i37"]
 
 [ext_resource type="Script" path="res://scripts/combat_node.gd" id="1_kirw0"]
 [ext_resource type="PackedScene" uid="uid://cuo5anf7g34eo" path="res://scenes/enemies/testenemy1.tscn" id="2_uk6vf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0dmcwfpyh0lw" path="res://scenes/combat/combat_interface.tscn" id="4_0df21"]
 [ext_resource type="Texture2D" uid="uid://ghjn50g8s01v" path="res://assets/images/enemies/test1.png" id="5_cpmg8"]
 [ext_resource type="Texture2D" uid="uid://2narmpxcqk8d" path="res://assets/images/enemies/test2.png" id="6_ispsp"]
+[ext_resource type="Script" path="res://scripts/Skill_Run.gd" id="8_r2pi2"]
 
 [node name="CombatNode" type="Node"]
 script = ExtResource("1_kirw0")
@@ -25,3 +26,6 @@ sprite = ExtResource("6_ispsp")
 ene_max_hp = 110
 
 [node name="Combat_Interface" parent="." instance=ExtResource("4_0df21")]
+
+[node name="Skill_Run" type="Node" parent="."]
+script = ExtResource("8_r2pi2")

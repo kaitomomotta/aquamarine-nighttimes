@@ -1,11 +1,97 @@
-[gd_scene load_steps=7 format=3 uid="uid://dalfujxnrl7nj"]
+[gd_scene load_steps=17 format=3 uid="uid://dalfujxnrl7nj"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_siahx"]
 [ext_resource type="Script" path="res://scripts/character.gd" id="2_cf0y7"]
-[ext_resource type="Texture2D" uid="uid://b6m3pbwgyo166" path="res://assets/images/characters/Kaito (1).png" id="3_a23lh"]
-[ext_resource type="Texture2D" uid="uid://408gbhp8gxix" path="res://assets/images/characters/Kirigiri (1).png" id="4_fltvs"]
-[ext_resource type="Texture2D" uid="uid://bildc0hp3qgp0" path="res://assets/images/characters/Shuichi (1).png" id="5_i3ua2"]
-[ext_resource type="Texture2D" uid="uid://t5s66yp4elve" path="res://assets/images/characters/Souda (1).png" id="6_32ly5"]
+[ext_resource type="Texture2D" uid="uid://v3b5y2unmwwc" path="res://assets/images/characters/sun_neutral.png" id="3_ictyt"]
+[ext_resource type="Texture2D" uid="uid://bv63b06cvg85m" path="res://assets/images/characters/Sun_Neutral.png" id="3_u58qr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nhkb"]
+atlas = ExtResource("3_ictyt")
+region = Rect2(0, 0, 288, 345)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3jt3"]
+atlas = ExtResource("3_ictyt")
+region = Rect2(288, 0, 288, 345)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nsd54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nhkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3jt3")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1s0r"]
+atlas = ExtResource("3_u58qr")
+region = Rect2(500, 0, 500, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kb5y"]
+atlas = ExtResource("3_u58qr")
+region = Rect2(0, 0, 500, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp3lg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1s0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kb5y")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47jhr"]
+atlas = ExtResource("3_u58qr")
+region = Rect2(0, 0, 500, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bf1u"]
+atlas = ExtResource("3_u58qr")
+region = Rect2(500, 0, 500, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0k0g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47jhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bf1u")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e76h6"]
+atlas = ExtResource("3_u58qr")
+region = Rect2(0, 0, 500, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqc1x"]
+atlas = ExtResource("3_u58qr")
+region = Rect2(500, 0, 500, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxtl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e76h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqc1x")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 2.0
+}]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_siahx")
@@ -15,7 +101,7 @@ script = ExtResource("1_siahx")
 [node name="Sun" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Sun"
-sprite = ExtResource("3_a23lh")
+sprite = SubResource("SpriteFrames_nsd54")
 emotion = 1
 chr_hp = 90
 chr_sp = 100
@@ -25,7 +111,7 @@ chr_ag = 200
 script = ExtResource("2_cf0y7")
 chr_name = "Meteor"
 chr_enum = 1
-sprite = ExtResource("4_fltvs")
+sprite = SubResource("SpriteFrames_fp3lg")
 chr_max_hp = 125
 chr_hp = 111
 chr_sp = 90
@@ -34,7 +120,7 @@ chr_sp = 90
 script = ExtResource("2_cf0y7")
 chr_name = "Moon"
 chr_enum = 2
-sprite = ExtResource("5_i3ua2")
+sprite = SubResource("SpriteFrames_0k0g0")
 chr_hp = 90
 chr_max_sp = 110
 chr_sp = 2
@@ -43,7 +129,7 @@ chr_sp = 2
 script = ExtResource("2_cf0y7")
 chr_name = "Satellite"
 chr_enum = 3
-sprite = ExtResource("6_32ly5")
+sprite = SubResource("SpriteFrames_cxtl8")
 chr_hp = 75
 chr_max_sp = 12
 chr_sp = 7

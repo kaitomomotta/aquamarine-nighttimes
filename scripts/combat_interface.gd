@@ -39,22 +39,26 @@ func update_pointer_position(active_entity):
 				$Pointer.position = Vector2(1625, 900)
 
 func update_character_portrait():
-	$Portrait1/Sprite2D.texture = Main.get_sun().sprite
+	$Portrait1/Sprite2D.sprite_frames = Main.get_sun().sprite
+	$Portrait1/Sprite2D.play("neutral")
 	$Portrait1/HPLabel.text = str(Main.get_sun().chr_hp) + " / " + str(Main.get_sun().chr_max_hp)
 	$Portrait1/SPLabel.text = str(Main.get_sun().chr_sp) + " / " + str(Main.get_sun().chr_max_sp)
 	$Portrait1/EmotionLabel.text = Enums.emotion_to_str(Main.get_sun().emotion)
 	
-	$Portrait2/Sprite2D.texture = Main.get_meteor().sprite
+	$Portrait2/Sprite2D.sprite_frames = Main.get_meteor().sprite
+	$Portrait2/Sprite2D.play("neutral")
 	$Portrait2/HPLabel.text = str(Main.get_meteor().chr_hp) + " / " + str(Main.get_meteor().chr_max_hp)
 	$Portrait2/SPLabel.text = str(Main.get_meteor().chr_sp) + " / " + str(Main.get_meteor().chr_max_sp)
 	$Portrait2/EmotionLabel.text = Enums.emotion_to_str(Main.get_meteor().emotion)	
 		
-	$Portrait3/Sprite2D.texture = Main.get_moon().sprite
+	$Portrait3/Sprite2D.sprite_frames = Main.get_moon().sprite
+	$Portrait3/Sprite2D.play("neutral")
 	$Portrait3/HPLabel.text = str(Main.get_moon().chr_hp) + " / " + str(Main.get_moon().chr_max_hp)
 	$Portrait3/SPLabel.text = str(Main.get_moon().chr_sp) + " / " + str(Main.get_moon().chr_max_sp)
 	$Portrait3/EmotionLabel.text = Enums.emotion_to_str(Main.get_moon().emotion)
 	
-	$Portrait4/Sprite2D.texture = Main.get_satellite().sprite
+	$Portrait4/Sprite2D.sprite_frames = Main.get_satellite().sprite
+	$Portrait4/Sprite2D.play("neutral")
 	$Portrait4/HPLabel.text = str(Main.get_satellite().chr_hp) + " / " + str(Main.get_satellite().chr_max_hp)
 	$Portrait4/SPLabel.text = str(Main.get_satellite().chr_sp) + " / " + str(Main.get_satellite().chr_max_sp)
 	$Portrait4/EmotionLabel.text = Enums.emotion_to_str(Main.get_satellite().emotion)
