@@ -24,7 +24,6 @@ func update_enemies():
 		$Enemies/Enemy1.position = Vector2(650,600)
 		$Enemies/Enemy2.position = Vector2(960,300)
 		$Enemies/Enemy3.position = Vector2(1270, 600)
-		
 
 func update_pointer_position(active_entity):
 	if active_entity is Character:

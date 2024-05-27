@@ -103,8 +103,13 @@ script = ExtResource("2_cf0y7")
 chr_name = "Sun"
 sprite = SubResource("SpriteFrames_nsd54")
 emotion = 1
+skill0 = 1
+skill1 = 1
+skill2 = 2
+skill3 = 3
 chr_hp = 90
 chr_sp = 100
+chr_str = 100
 chr_ag = 200
 
 [node name="Meteor" type="Node" parent="Characters"]
@@ -112,24 +117,39 @@ script = ExtResource("2_cf0y7")
 chr_name = "Meteor"
 chr_enum = 1
 sprite = SubResource("SpriteFrames_fp3lg")
+skill0 = 1
+skill1 = 1
+skill2 = 1
+skill3 = 1
 chr_max_hp = 125
 chr_hp = 111
 chr_sp = 90
+chr_str = 100
 
 [node name="Moon" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Moon"
 chr_enum = 2
 sprite = SubResource("SpriteFrames_0k0g0")
+skill0 = 2
+skill1 = 2
+skill2 = 3
+skill3 = 3
 chr_hp = 90
 chr_max_sp = 110
 chr_sp = 2
+chr_str = 100
 
 [node name="Satellite" type="Node" parent="Characters"]
 script = ExtResource("2_cf0y7")
 chr_name = "Satellite"
 chr_enum = 3
 sprite = SubResource("SpriteFrames_cxtl8")
+skill0 = 1
+skill1 = 2
+skill2 = 3
+skill3 = 2
 chr_hp = 75
 chr_max_sp = 12
 chr_sp = 7
+chr_str = 100

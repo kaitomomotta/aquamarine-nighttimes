@@ -45,7 +45,15 @@ func kill():
 
 func take_damage(amount : int):
 	ene_hp -= amount
+	if ene_hp < 0:
+		ene_hp = 0
 	print(ene_name + " took " + str(amount) + " damage, health is now " + str(ene_hp))
+
+func heal(amount : int):
+	ene_hp += amount
+	if ene_hp > ene_max_hp:
+		ene_hp = ene_max_hp
+	print(ene_name + " received " + str(amount) + " healing, health is now " + str(ene_hp))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -7,6 +7,12 @@ class_name Character extends Node
 @export var sprite : SpriteFrames
 @export var emotion : Enums.Emotions = Enums.Emotions.NEUTRAL
 
+var chr_skills : Array = []
+@export var skill0 : Enums.SKILLS
+@export var skill1 : Enums.SKILLS
+@export var skill2 : Enums.SKILLS
+@export var skill3 : Enums.SKILLS
+
 # evolution stats
 @export var chr_level : int = 1
 @export var chr_exp : int = 0
@@ -40,6 +46,12 @@ class_name Character extends Node
 ## affects odds for escaping from battle
 @export var chr_lu : int
 
+func get_skills_list()->Array:
+	return chr_skills
+
+func get_selected_skills() ->Array:
+	return [skill0,skill1,skill2,skill3]
+
 func say_hi():
 	print(chr_name + " has entered the chat")
 
@@ -49,7 +61,15 @@ func kill():
 
 func take_damage(amount : int):
 	chr_hp -= amount
+	if chr_hp < 0:
+		chr_hp = 0
 	print(chr_name + " took " + str(amount) + " damage, health is now " + str(chr_hp))
+
+func heal(amount : int):
+	chr_hp += amount
+	if chr_hp > chr_max_hp:
+		chr_hp = chr_max_hp
+	print(chr_name + " received " + str(amount) + " healing, health is now " + str(chr_hp))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

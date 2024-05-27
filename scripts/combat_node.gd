@@ -129,6 +129,8 @@ func _process(delta):
 				return
 			Enums.COMBAT_INPUT_TYPE.DIALOGUE:
 				# TODO
+				$Skill_Run.run_skill(skill, target, active_entity)
+				input_type = Enums.COMBAT_INPUT_TYPE.FINISHED
 				return
 			Enums.COMBAT_INPUT_TYPE.SELECTING_SKILL:
 				# TODO
@@ -139,6 +141,9 @@ func _process(delta):
 					target = Enums.TARGET.NONE
 					return
 				# TODO there is someone selected, perform the action
+				$Skill_Run.run_skill(skill, target, active_entity)
+				print("aaa")
+				input_type = Enums.COMBAT_INPUT_TYPE.FINISHED
 				return
 			Enums.COMBAT_INPUT_TYPE.SELECTING_ALLY:
 				# check for none or wrong input
@@ -150,6 +155,7 @@ func _process(delta):
 			Enums.COMBAT_INPUT_TYPE.FINISHED:
 				next_turn()
 				input_type = Enums.COMBAT_INPUT_TYPE.BASE
+				target = Enums.TARGET.NONE
 				return
 		return
 	print("combat is finished")

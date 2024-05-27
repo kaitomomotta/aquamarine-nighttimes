@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0dmcwfpyh0lw"]
+[gd_scene load_steps=11 format=3 uid="uid://b0dmcwfpyh0lw"]
 
 [ext_resource type="Script" path="res://scripts/combat_interface.gd" id="1_k500p"]
 [ext_resource type="Texture2D" uid="uid://cexgvde515emq" path="res://assets/images/polaroid.png" id="3_63we1"]
@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bnx3j2alwl4jw" path="res://assets/images/UI/CombatPassButton.png" id="8_0e7al"]
 [ext_resource type="Texture2D" uid="uid://blk4kj1l55i5f" path="res://assets/images/UI/CombatBasicPointer.png" id="9_ohyif"]
 [ext_resource type="Texture2D" uid="uid://bia5q3mjjfaf6" path="res://assets/images/UI/Pointer.png" id="10_ttd6d"]
+[ext_resource type="Texture2D" uid="uid://cs5mstr5pukir" path="res://assets/images/UI/SkillsWindow.png" id="10_yh17x"]
 
 [node name="Combat_Interface" type="Node2D"]
 script = ExtResource("1_k500p")
 
 [node name="Portrait1" type="Node2D" parent="."]
-position = Vector2(216, 796)
+position = Vector2(216, 796.04)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Portrait1"]
 position = Vector2(0, -19)
@@ -51,7 +52,7 @@ text = "code will display Emotion here"
 horizontal_alignment = 1
 
 [node name="Portrait2" type="Node2D" parent="."]
-position = Vector2(1700, 268)
+position = Vector2(216, 268)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Portrait2"]
 position = Vector2(0, -19)
@@ -89,7 +90,7 @@ text = "code will display Emotion here"
 horizontal_alignment = 1
 
 [node name="Portrait3" type="Node2D" parent="."]
-position = Vector2(216, 268)
+position = Vector2(1700, 796)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Portrait3"]
 position = Vector2(0, -19)
@@ -127,7 +128,7 @@ text = "code will display Emotion here"
 horizontal_alignment = 1
 
 [node name="Portrait4" type="Node2D" parent="."]
-position = Vector2(1700, 796)
+position = Vector2(1700, 268)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Portrait4"]
 position = Vector2(0, -19)
@@ -206,7 +207,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 
 [node name="CombatButtons" type="Node2D" parent="."]
-position = Vector2(940, 920)
+position = Vector2(960, 920)
 script = ExtResource("4_qbsme")
 
 [node name="BasicScreen" type="Node2D" parent="CombatButtons"]
@@ -231,7 +232,46 @@ texture = ExtResource("8_0e7al")
 position = Vector2(-243, -52.5)
 texture = ExtResource("9_ohyif")
 
+[node name="SelectingAllyPointer" type="Sprite2D" parent="CombatButtons"]
+texture = ExtResource("10_ttd6d")
+
 [node name="SelectingEnemyPointer" type="Sprite2D" parent="CombatButtons"]
+texture = ExtResource("10_ttd6d")
+
+[node name="SkillScreen" type="Node2D" parent="CombatButtons"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CombatButtons/SkillScreen"]
+texture = ExtResource("10_yh17x")
+
+[node name="Label0" type="Label" parent="CombatButtons/SkillScreen/Sprite2D"]
+offset_left = -440.0
+offset_top = -53.0
+offset_right = -277.0
+offset_bottom = -30.0
+text = "Text will display here"
+
+[node name="Label1" type="Label" parent="CombatButtons/SkillScreen/Sprite2D"]
+offset_left = -440.0
+offset_top = 25.0
+offset_right = -277.0
+offset_bottom = 48.0
+text = "Text will display here"
+
+[node name="Label2" type="Label" parent="CombatButtons/SkillScreen/Sprite2D"]
+offset_left = 260.0
+offset_top = -53.0
+offset_right = 423.0
+offset_bottom = -30.0
+text = "Text will display here"
+
+[node name="Label3" type="Label" parent="CombatButtons/SkillScreen/Sprite2D"]
+offset_left = 260.0
+offset_top = 25.0
+offset_right = 423.0
+offset_bottom = 48.0
+text = "Text will display here"
+
+[node name="Pointer" type="Sprite2D" parent="CombatButtons/SkillScreen"]
 texture = ExtResource("10_ttd6d")
 
 [node name="Pointer" type="Sprite2D" parent="."]
