@@ -81,17 +81,62 @@ enum SKILLS {
 	NONE = 0,
 	BASIC_ATTACK,
 	HEAL,
-	MAKE_HAPPY,
+	HAPPY_THOUGHTS,
+	COMBO_ING,
+	ENLIGHTMENT,
+	RUNAWAY,
+	SAD_SONG,
+	CHILL_OUT,
+	SEDUCTION,
+	SCARY_LOOK,
+	MINOR_INCONVENIENCE,
+	ONE_TWO_SWEEP,
+	RAMPAGE,
+	FOCUS,
+	PARACETAMOL,
+	PILL_BOMB,
+	THERAPY,
+	CRASH_CART,
 }
 
 func skill_to_str(skill: SKILLS) -> String:
 	match skill:
 		SKILLS.BASIC_ATTACK:
-			return "Basic Attack"
+			return "BASIC ATTACK"
 		SKILLS.HEAL:
-			return "Heal"
-		SKILLS.MAKE_HAPPY:
-			return "Make Happy"
+			return "HEAL"
+		SKILLS.HAPPY_THOUGHTS:
+			return "HAPPY THOUGHTS"
+		SKILLS.COMBO_ING:
+			return "COMBO-ING"
+		SKILLS.ENLIGHTMENT:
+			return "ENLIGHTMENT"
+		SKILLS.RUNAWAY:
+			return "RUN-AWAY"
+		SKILLS.SAD_SONG:
+			return "SAD SONG"
+		SKILLS.CHILL_OUT:
+			return "CHILL OUT"
+		SKILLS.SEDUCTION:
+			return "SEDUCTION"
+		SKILLS.SCARY_LOOK:
+			return "SCARY LOOK"
+		SKILLS.MINOR_INCONVENIENCE:
+			return "MINOR INCONVENIENCE"
+		SKILLS.ONE_TWO_SWEEP:
+			return "ONE-TWO SWEEP"
+		SKILLS.RAMPAGE:
+			return "RAMPAGE"
+		SKILLS.FOCUS:
+			return "FOCUS"
+		SKILLS.PARACETAMOL:
+			return "PARACETAMOL"
+		SKILLS.PILL_BOMB:
+			return "PILL BOMB"
+		SKILLS.THERAPY:
+			return "THERAPY"
+		SKILLS.CRASH_CART:
+			return "CRASH CART"
 	return "None"
 
 ## returns 0 if we need to target an enemy,
@@ -103,6 +148,4 @@ func skill_selecting_type(skill: SKILLS) -> int:
 			return 0
 		SKILLS.HEAL:
 			return 1
-		SKILLS.MAKE_HAPPY:
-			return 2
 	return 2

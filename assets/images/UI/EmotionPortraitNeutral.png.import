@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://408gbhp8gxix"
-path="res://.godot/imported/Kirigiri (1).png-d2b78afe4c0dd5551fa7d22f8db101f7.ctex"
+uid="uid://bvi57n0rx3m33"
+path="res://.godot/imported/EmotionPortraitNeutral.png-3107f93af0dac9c7d00d61d73e21e05d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/Kirigiri (1).png"
-dest_files=["res://.godot/imported/Kirigiri (1).png-d2b78afe4c0dd5551fa7d22f8db101f7.ctex"]
+source_file="res://assets/images/UI/EmotionPortraitNeutral.png"
+dest_files=["res://.godot/imported/EmotionPortraitNeutral.png-3107f93af0dac9c7d00d61d73e21e05d.ctex"]
 
 [params]
 

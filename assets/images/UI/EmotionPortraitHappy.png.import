@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t5s66yp4elve"
-path="res://.godot/imported/Souda (1).png-54983a1f4ce37459e19ce8e9dc2f0f0e.ctex"
+uid="uid://cl62m5me3de85"
+path="res://.godot/imported/EmotionPortraitHappy.png-dff90efd4b14dcbdd5f1ccda611b81e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/Souda (1).png"
-dest_files=["res://.godot/imported/Souda (1).png-54983a1f4ce37459e19ce8e9dc2f0f0e.ctex"]
+source_file="res://assets/images/UI/EmotionPortraitHappy.png"
+dest_files=["res://.godot/imported/EmotionPortraitHappy.png-dff90efd4b14dcbdd5f1ccda611b81e6.ctex"]
 
 [params]
 

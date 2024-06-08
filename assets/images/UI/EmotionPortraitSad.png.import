@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bildc0hp3qgp0"
-path="res://.godot/imported/Shuichi (1).png-9000cfc11d485eade59455a69c08bfb7.ctex"
+uid="uid://b6j0gpeufliny"
+path="res://.godot/imported/EmotionPortraitSad.png-92688b3a43a1da44ba5586f89b5f9274.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/Shuichi (1).png"
-dest_files=["res://.godot/imported/Shuichi (1).png-9000cfc11d485eade59455a69c08bfb7.ctex"]
+source_file="res://assets/images/UI/EmotionPortraitSad.png"
+dest_files=["res://.godot/imported/EmotionPortraitSad.png-92688b3a43a1da44ba5586f89b5f9274.ctex"]
 
 [params]
 
